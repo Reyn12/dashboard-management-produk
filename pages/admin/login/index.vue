@@ -1,29 +1,3 @@
-<template>
-    <section class="container">
-        <div class="login-container">
-            <div class="circle circle-one"></div>
-            <div class="form-container">
-                <img
-                    src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png"
-                    alt="illustration"
-                    class="illustration"
-                />
-                <h1 class="opacity">LOGIN</h1>
-                <form @submit.prevent="handleLogin">
-                    <input type="text" placeholder="USERNAME" v-model="username" />
-                    <input type="password" placeholder="PASSWORD" v-model="password" />
-                    <button class="opacity" type="submit">SUBMIT</button>
-                </form>
-                <div class="register-forget opacity">
-                    <a href="#">REGISTER</a>
-                    <a href="#">FORGOT PASSWORD</a>
-                </div>
-            </div>
-            <div class="circle circle-two"></div>
-        </div>
-    </section>
-</template>
-
 <script>
 export default {
     layout: 'default',
@@ -39,17 +13,43 @@ export default {
             console.log('Login dengan username:', this.username);
 
             // Redirect ke dashboard setelah login
-            this.$router.push('/admin');
+            this.$router.push('/admin/dashboard');
         }
     }
 }
 </script>
 
+<template>
+    <section class="container">
+        <div class="login-container">
+            <div class="circle circle-one"/>
+            <div class="form-container">
+                <img
+                    src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png"
+                    alt="illustration"
+                    class="illustration"
+                >
+                <h1 class="opacity">LOGIN</h1>
+                <form @submit.prevent="handleLogin">
+                    <input v-model="username" type="text" placeholder="USERNAME" >
+                    <input v-model="password" type="password" placeholder="PASSWORD" >
+                    <button class="opacity" type="submit">LOGIN</button>
+                </form>
+                <div class="register-forget opacity">
+                    <a href="#">REGISTER</a>
+                    <a href="#">FORGOT PASSWORD</a>
+                </div>
+            </div>
+            <div class="circle circle-two"/>
+        </div>
+    </section>
+</template>
+
 <style scoped>
 :root {
     --background: #1a1a2e;
     --color: #ffffff;
-    --primary-color: #0f3460;
+    --primary-color: var(--color-primary);
 }
 
 * {
@@ -184,5 +184,47 @@ h1 {
     100% {
         transform: scale(1);
     }
+}
+
+@media screen and (max-width: 768px) {
+  .login-container {
+    width: 90%;
+    max-width: 22.2rem;
+  }
+  
+  .illustration {
+    width: 70%;
+    top: -10%;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .form-container {
+    padding: 1.5rem;
+  }
+  
+  .login-container form input {
+    margin: 1.5rem 0;
+    padding: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .illustration {
+    width: 60%;
+    top: -8%;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .register-forget {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+  }
 }
 </style>

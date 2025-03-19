@@ -8,7 +8,7 @@
 .default-layout {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Pastikan layout minimal setinggi viewport */
+    min-height: 100vh;
     overflow-y: auto;
     width: 100%;
     max-width: 100%;
