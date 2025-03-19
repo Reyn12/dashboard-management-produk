@@ -1,19 +1,25 @@
 <template>
-    <div>
-        <header>
-            <!-- Header landing page -->
-            <nav>
-                <!-- Menu navigasi -->
-            </nav>
-        </header>
-
-        <main>
-            <slot />
-            <!-- Ini akan diisi konten dari page -->
-        </main>
-
-        <footer>
-            <!-- Footer landing page -->
-        </footer>
+    <div class="default-layout">
+        <slot />
     </div>
 </template>
+
+<style scoped>
+.default-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Pastikan layout minimal setinggi viewport */
+    overflow-y: auto;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* Media query untuk tampilan mobile */
+@media (max-width: 768px) {
+    .default-layout {
+        padding: 0;
+    }
+}
+</style>

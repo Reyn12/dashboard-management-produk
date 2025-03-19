@@ -1,0 +1,51 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  #__nuxt {
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  /* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+/* Apply font family */
+body, button, input, textarea, select {
+  font-family: 'Lato', sans-serif;
+}
+
+:root {
+  /* Primary Colors */
+  --color-primary: #37598d;        /* Biru gelap */
+  --color-primary-light: #4a6fa5;  /* Biru gelap lebih terang */
+  --color-primary-dark: #2a4370;   /* Biru gelap lebih gelap */
+  
+  /* Secondary Colors */
+  --color-secondary: #ff6b6b;      /* Merah muda */
+  --color-secondary-light: #ff8a8a; /* Merah muda lebih terang */
+  --color-secondary-dark: #ff4d4d; /* Merah muda lebih gelap */
+  
+  /* Neutral Colors */
+  --color-white: #ffffff;
+  --color-light: #f8f9fa;
+  --color-gray-light: #e9ecef;
+  --color-gray: #6c757d;
+  --color-gray-dark: #343a40;
+  --color-dark: #212529;
+  
+  /* Functional Colors */
+  --color-success: #28a745;
+  --color-info: #17a2b8;
+  --color-warning: #ffc107;
+  --color-danger: #dc3545;
+}
